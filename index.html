@@ -4,33 +4,63 @@
 <head>
     <meta charset="utf-8">
     <title>戏曲字幕服务中心</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="screen-orientation" content="portrait">
     <meta name="x5-orientation" content="portrait">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <style>
-        header{text-align: center;}
-        .user{font-size: 0.7em;}
+        header {
+            text-align: center;
+        }
+
+        .user {
+            font-size: 0.7em;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .copy {
+            padding: 8px;
+            margin-right: 4px;
+            background-color: #05cf07;
+            border-radius: 4px;
+            color: #fff;
+        }
     </style>
-    </head>
-    <body>
-        <header>
-            <h2>戏曲字幕</h2>
-            <p id="user">心灵的孤僻</p>
-        </header>
-        <h4>项目</h4>
-        <ul>
-            <li><a href="https://gitee.com/xlgp/XiQuZiMu">Gitee</a></li>
-        </ul>
-        <h4>帮助中心</h4>
-        <ul>
-            <li><a href="help-center/howToOpenAccessibilitySetting.html">如何开启无障碍服务？</a></li>
-        </ul>
-        <h4>声明</h4>
-        <ul>
-            <li><a href="statement/index.html">戏曲字幕声明</a></li>
-        </ul>
-    </body>
-    </html>
+</head>
+
+<body>
+    <header>
+        <h2>戏曲字幕</h2>
+        <p id="user">心灵的孤僻</p>
+    </header>
+    <h4>项目</h4>
+    <ul>
+        <li>点击下载最新版：<a
+                href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v4.1.2/xiquzimu_v4.1.2_release.apk">v4.1.2</a>
+        </li>
+        <li><span id="copy" class="copy" data-clipboard-target="apk-releases-url">复制</span>Apk下载链接：<a
+                id="apk-releases-url"
+                href="https://gitee.com/xlgp/xiquzimu-apk/releases">https://gitee.com/xlgp/xiquzimu-apk/releases</a>
+        </li>
+    </ul>
+    <h4>帮助中心</h4>
+    <ul>
+        <li><a href="help-center/howToOpenAccessibilitySetting.html">如何开启无障碍服务？</a></li>
+    </ul>
+    <h4>声明</h4>
+    <ul>
+        <li><a href="statement/index.html">戏曲字幕声明</a></li>
+    </ul>
+</body>
+<script src="js/clipboard.min.js"></script>
+<script>
+    new ClipboardJS('#copy');
+</script>
+
+</html>
