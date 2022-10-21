@@ -45,8 +45,8 @@
                 href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v4.1.2/xiquzimu_v4.1.2_release.apk">v4.1.2</a>
         </li>
         <li>
-            <p id="copy" class="copy" data-clipboard-target="#apk-releases-url">点击复制Apk下载链接<small
-                    id="copy-result"></small></p><a id="apk-releases-url"
+            <div id="copy" class="copy" data-clipboard-target="#apk-releases-url">点击复制Apk下载链接<small
+                    id="copy-result"></small></div><a id="apk-releases-url"
                 href="https://gitee.com/xlgp/xiquzimu-apk/releases">https://gitee.com/xlgp/xiquzimu-apk/releases</a>
         </li>
     </ul>
@@ -62,14 +62,22 @@
 <script src="js/clipboard.min.js"></script>
 <script>
     let clipboard = new ClipboardJS('#copy');
+    let $cr = document.getElementById('copy-result');
     clipboard.on('success', function (e) {
-        document.getElementById('copy-result').innerText = "（已复制）";
+        setCrInnerText("（已复制）");
         e.clearSelection();
     });
 
     clipboard.on('error', function (e) {
-        document.getElementById('copy-result').innerText = "（复制失败）";
+        setCrInnerText("（复制失败）");
     });
+
+    function setCrInnerText(text) {
+        $cr.innerText = "";
+        setTimeout(() => {
+            $cr.innerText = text;
+        }, 100);
+    }
 </script>
 
 </html>
