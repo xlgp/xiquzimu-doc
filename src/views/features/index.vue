@@ -30,6 +30,7 @@
         >复制下载链接</van-button
       >
       {{ copyTips }}
+      <small>{{ text }}</small>
     </van-collapse-item>
   </van-collapse>
 </template>
@@ -45,9 +46,10 @@ const appReleaseUrl = ref("https://gitee.com/xlgp/xiquzimu-apk/releases");
 
 const copyTips = ref("不可复制");
 
-const { copy, copied, isSupported } = useClipboard({ source: appReleaseUrl });
+const { copy, copied, isSupported, text } = useClipboard({ source: appReleaseUrl });
 
 watch(copied, (value) => {
+
   if (value) {
     showToast("已复制");
     copyTips.value = "已复制";
