@@ -1,64 +1,34 @@
 <template>
-  <van-collapse v-model="activeNames">
-    <van-collapse-item title="点赞" name="1">
+  <van-collapse v-model="activeNames" @change="changeHandler">
+    <van-collapse-item title="点赞" :name="collapseNames[0]">
       双击悬浮窗头部时间可以点赞
-      <van-image
-        src="https://xlgp.gitee.io/static/xiquzimu/dianzan-1.png"
-        fit="scale-down"
-      />
+      <van-image src="https://xlgp.gitee.io/static/xiquzimu/dianzan-1.png" fit="scale-down" />
     </van-collapse-item>
-    <van-collapse-item title="添加唱段" name="2">
+    <van-collapse-item title="添加唱段" :name="collapseNames[1]">
       点击唱段页面左上角图标，可添加唱段。
-      <van-image
-        src="https://xlgp.gitee.io/static/xiquzimu/add-changduan-btn.jpg"
-        fit="scale-down"
-      />
-      戏曲字幕允许用户按照<a
-        href="https://gitee.com/xlgp/opera-lyrics/blob/master/黄梅戏/五女拜寿-奉汤（男独唱）.lrc"
-        >格式</a
-      >添加唱段。
+      <van-image src="https://xlgp.gitee.io/static/xiquzimu/add-changduan-btn.jpg" fit="scale-down" />
+      戏曲字幕允许用户按照<a href="https://gitee.com/xlgp/opera-lyrics/blob/master/黄梅戏/五女拜寿-奉汤（男独唱）.lrc">格式</a>添加唱段。
     </van-collapse-item>
-    <van-collapse-item title="下载戏曲字幕App" name="3">
+    <van-collapse-item title="下载戏曲字幕App" :name="collapseNames[2]">
       <p>{{ appReleaseUrl }}</p>
       <p>复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk</p>
-      <van-button
-        :disabled="!isSupported"
-        type="primary"
-        size="small"
-        @click="copy(appReleaseUrl)"
-        block
-        >复制下载链接</van-button
-      >
-      {{ copyTips }}
-      <small>{{ text }}</small>
+      <van-button :data-clipboard-text="appReleaseUrl" ref="copyBtnRef" type="primary" size="small" @click="copyHandler"
+        block>复制下载链接</van-button>
     </van-collapse-item>
   </van-collapse>
 </template>
 <script setup lang="ts">
-import { onMounted, ref, watch } from "vue";
-import { useClipboard } from "@vueuse/core";
-import { showToast } from "vant";
-import "vant/es/toast/style";
+import { ref } from "vue";
+import { useClipboard } from "./composiable/useClipboard"
 
-const activeNames = ref(["1"]);
+const collapseNames = ["1", "2", "3"];
+
+const activeNames = ref([collapseNames[0]]);
 
 const appReleaseUrl = ref("https://gitee.com/xlgp/xiquzimu-apk/releases");
 
-const copyTips = ref("不可复制");
+const copyBtnRef = ref();
 
-const { copy, copied, isSupported, text } = useClipboard({ source: appReleaseUrl });
+const { changeHandler, copyHandler } = useClipboard(appReleaseUrl, collapseNames, copyBtnRef);
 
-watch(copied, (value) => {
-
-  if (value) {
-    showToast("已复制");
-    copyTips.value = "已复制";
-  }
-});
-
-onMounted(() => {
-  if (isSupported) {
-    copyTips.value = "可复制链接";
-  }
-});
 </script>
