@@ -1,0 +1,35 @@
+<template>
+  <main>
+    <p>
+      <van-image
+        src="https://xlgp.gitee.io/static/xiquzimu/open-accesibility-btn.jpg"
+        fit="scale-down"
+      />
+    </p>
+    <p style="padding: 10px 20px; background-color: rgb(237 225 255); display: flex">
+      <van-icon name="info-o" style="padding-right: 10px; color: #6200ee" size="1.5em" />
+      <span>
+        点击无障碍服务按钮后，界面上如没有找到<strong><em>戏曲字幕</em></strong>
+        服务，请下拉到底。
+      </span>
+    </p>
+    <p>
+      <van-image
+        src="https://xlgp.gitee.io/static/xiquzimu/AccessibilitySetting-1.jpg"
+        fit="scale-down"
+      />
+    </p>
+    <p>
+      <van-image
+        src="https://xlgp.gitee.io/static/xiquzimu/AccessibilitySetting-2.jpg"
+        fit="scale-down"
+      />
+    </p>
+    <p>
+      <van-image
+        src="https://xlgp.gitee.io/static/xiquzimu/AccessibilitySetting-3.jpg"
+        fit="scale-down"
+      />
+    </p>
+  </main>
+</template>
