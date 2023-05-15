@@ -1,5 +1,6 @@
 <template>
-    <van-button type="primary">确认</van-button>
+    <h2>戏曲字幕</h2>
+    <p>心灵的孤僻</p>
 </template>
 <script setup lang="ts">
 </script>
