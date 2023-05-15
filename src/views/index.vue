@@ -1,15 +1,9 @@
 <template>
   <header>
     <h2>戏曲字幕</h2>
-    <p>心灵的孤僻</p>
+    <p>一款应用于戏曲直播时自动发送字幕的软件。</p>
   </header>
   <van-cell-group title="应用">
-    <van-cell
-      center
-      title="应用"
-      value="复制链接"
-      label="复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk"
-    />
     <van-cell
       center
       title="功能简介"

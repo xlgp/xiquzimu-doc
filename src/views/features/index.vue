@@ -18,13 +18,27 @@
         >格式</a
       >添加唱段。
     </van-collapse-item>
-    <van-collapse-item title="标题3" name="3">
-      在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+    <van-collapse-item title="下载戏曲字幕App" name="3">
+      复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk
+      <van-button type="primary" size="small" @click="copy" block>复制下载链接</van-button>
     </van-collapse-item>
   </van-collapse>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { useClipboard } from "@vueuse/core";
+import { showToast } from "vant";
+import "vant/es/toast/style";
 
 const activeNames = ref(["1"]);
+
+const appReleaseUrl = ref("https://gitee.com/xlgp/xiquzimu-apk/releases");
+
+const { copy, copied } = useClipboard({ source: appReleaseUrl });
+
+watch(copied, (value) => {
+  if (value) {
+    showToast("已复制");
+  }
+});
 </script>
