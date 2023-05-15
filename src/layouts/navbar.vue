@@ -9,7 +9,7 @@ import constants from "../constants/index";
 
 const route = useRoute();
 
-const title = ref(route.meta.title || constants.title);
+const title = ref(route.meta.title as string || constants.title);
 
 const onClickLeft = () => history.back();
 </script>
