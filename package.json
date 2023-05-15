@@ -1,12 +1,12 @@
 {
   "name": "xiquzimu-doc",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc && vite build --base=/xiquzimu-doc/",
-    "preview": "vite preview"
+    "preview": "vite preview --base=/xiquzimu-doc/"
   },
   "dependencies": {
     "clipboard": "^2.0.11",
