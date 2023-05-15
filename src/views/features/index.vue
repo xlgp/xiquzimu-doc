@@ -20,7 +20,9 @@
     </van-collapse-item>
     <van-collapse-item title="下载戏曲字幕App" name="3">
       复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk
-      <van-button type="primary" size="small" @click="copy" block>复制下载链接</van-button>
+      <van-button type="primary" size="small" @click="copy(appReleaseUrl)" block
+        >复制下载链接</van-button
+      >
     </van-collapse-item>
   </van-collapse>
 </template>
