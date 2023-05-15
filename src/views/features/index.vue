@@ -19,15 +19,22 @@
       >添加唱段。
     </van-collapse-item>
     <van-collapse-item title="下载戏曲字幕App" name="3">
-      复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk
-      <van-button type="primary" size="small" @click="copy(appReleaseUrl)" block
+      <p>{{ appReleaseUrl }}</p>
+      <p>复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk</p>
+      <van-button
+        :disabled="!isSupported"
+        type="primary"
+        size="small"
+        @click="copy(appReleaseUrl)"
+        block
         >复制下载链接</van-button
       >
+      {{ copyTips }}
     </van-collapse-item>
   </van-collapse>
 </template>
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useClipboard } from "@vueuse/core";
 import { showToast } from "vant";
 import "vant/es/toast/style";
@@ -36,11 +43,20 @@ const activeNames = ref(["1"]);
 
 const appReleaseUrl = ref("https://gitee.com/xlgp/xiquzimu-apk/releases");
 
-const { copy, copied } = useClipboard({ source: appReleaseUrl });
+const copyTips = ref("不可复制");
+
+const { copy, copied, isSupported } = useClipboard({ source: appReleaseUrl });
 
 watch(copied, (value) => {
   if (value) {
     showToast("已复制");
+    copyTips.value = "已复制";
+  }
+});
+
+onMounted(() => {
+  if (isSupported) {
+    copyTips.value = "可复制链接";
   }
 });
 </script>
