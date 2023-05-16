@@ -1,6 +1,6 @@
 <template>
   <header>
-    <van-image :src="logoImgUrl" width="7rem" radius="16" />
+    <van-image :src="logoImgUrl" width="6rem" radius="16" />
     <p>一款应用于戏曲直播时自动发送字幕的软件。</p>
   </header>
   <van-cell-group title="应用">
