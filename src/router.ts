@@ -7,6 +7,7 @@ const routes = [
     { path: "/WhyIsAutoCloseAccesibilityService", name: "WhyIsAutoCloseAccesibilityService", meta: { title: "为什么无障碍服务会自动关闭" }, component: () => import("./views/helpCenter/WhyIsAutoCloseAccesibilityService.vue") },
     { path: "/agreement", name: "agreement", meta: { title: "用户协议" }, component: () => import("./views/agreement-privacy/agreement.vue") },
     { path: "/privacy", name: "privacy", meta: { title: "隐私政策" }, component: () => import("./views/agreement-privacy/privacy.vue") },
+    { path: "/download", name: "download", meta: { title: "应用下载" }, component: () => import("./views/download/index.vue") },
     { path: "/howToUse", name: "howToUse", meta: { title: "功能简介" }, component: () => import("./views/features/index.vue") }
 
 ]
