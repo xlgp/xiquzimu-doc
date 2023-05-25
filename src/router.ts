@@ -5,7 +5,8 @@ const routes = [
     { path: '/', component: Index, meta: { title: "首页" } },
     { path: "/openAccesibilityService", name: "openAccesibilityService", meta: { title: "如何开启无障碍服务" }, component: () => import("./views/helpCenter/openAccesibilityService.vue") },
     { path: "/WhyIsAutoCloseAccesibilityService", name: "WhyIsAutoCloseAccesibilityService", meta: { title: "为什么无障碍服务会自动关闭" }, component: () => import("./views/helpCenter/WhyIsAutoCloseAccesibilityService.vue") },
-    { path: "/statement", name: "statement", meta: { title: "声明" }, component: () => import("./views/statement/index.vue") },
+    { path: "/agreement", name: "agreement", meta: { title: "用户协议" }, component: () => import("./views/agreement-privacy/agreement.vue") },
+    { path: "/privacy", name: "privacy", meta: { title: "隐私政策" }, component: () => import("./views/agreement-privacy/privacy.vue") },
     { path: "/howToUse", name: "howToUse", meta: { title: "功能简介" }, component: () => import("./views/features/index.vue") }
 
 ]

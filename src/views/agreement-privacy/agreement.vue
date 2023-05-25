@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1 style="text-align: center">
-      <a id="user-content-声明" class="anchor" href="#%E5%A3%B0%E6%98%8E"></a>声明
+      用户协议
     </h1>
   </header>
   <main>

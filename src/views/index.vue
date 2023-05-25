@@ -29,8 +29,9 @@
       is-link
     />
   </van-cell-group>
-  <van-cell-group title="声明">
-    <van-cell title="戏曲字幕声明" to="statement" value="查看" is-link />
+  <van-cell-group title="用户协议和隐私政策">
+    <van-cell title="用户协议" to="agreement" value="查看" is-link />
+    <van-cell title="隐私政策" to="privacy" value="查看" is-link />
   </van-cell-group>
 </template>
 <script setup lang="ts">
