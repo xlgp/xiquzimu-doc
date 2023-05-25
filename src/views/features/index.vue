@@ -25,7 +25,7 @@ const collapseNames = ["1", "2", "3"];
 
 const activeNames = ref([collapseNames[0]]);
 
-const appReleaseUrl = ref("https://gitee.com/xlgp/xiquzimu-apk/releases");
+const appReleaseUrl = ref("https://xlgp.gitee.io/xiquzimu-doc/#/download");
 
 const copyBtnRef = ref();
 
