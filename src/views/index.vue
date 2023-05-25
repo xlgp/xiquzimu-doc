@@ -1,7 +1,7 @@
 <template>
   <header>
-    <van-image :src="logoImgUrl" width="6rem" radius="16" />
-    <p>一款应用于戏曲直播时自动发送字幕的软件。</p>
+    <h2>戏曲字幕服务中心</h2>
+    <div class="van-cell-group__title">一款应用于戏曲直播时自动发送字幕的软件。</div>
   </header>
   <van-cell-group title="应用">
     <van-cell center title="功能简介" value="查看" to="howToUse" is-link />
@@ -35,9 +35,6 @@
   </van-cell-group>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
-
-const logoImgUrl = ref(import.meta.env.BASE_URL + "logo.png");
 </script>
 <style scoped>
 header {
