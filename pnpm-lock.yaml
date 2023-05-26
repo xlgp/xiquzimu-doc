@@ -5,6 +5,7 @@ specifiers:
   '@vitejs/plugin-legacy': ^4.0.3
   '@vitejs/plugin-vue': ^4.1.0
   clipboard: ^2.0.11
+  qrcode.vue: ^3.4.0
   terser: ^5.17.4
   typescript: ^5.0.2
   unplugin-vue-components: ^0.24.1
@@ -16,6 +17,7 @@ specifiers:
 
 dependencies:
   clipboard: 2.0.11
+  qrcode.vue: 3.4.0_vue@3.3.2
   vant: 4.3.2_vue@3.3.2
   vue: 3.3.2
   vue-router: 4.2.0_vue@3.3.2
@@ -2097,6 +2099,14 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /qrcode.vue/3.4.0_vue@3.3.2:
+    resolution: {integrity: sha512-4XeImbv10Fin16Fl2DArCMhGyAdvIg2jb7vDT+hZiIAMg/6H6mz9nUZr/dR8jBcun5VzNzkiwKhiqOGbloinwA==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.3.2
+    dev: false
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}

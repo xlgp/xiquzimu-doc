@@ -1,43 +1,43 @@
 <template>
-    <h3 style="margin: 160px 0 20px; text-align: center">
-    戏曲字幕应用
-  </h3>
-  <h4 class="van-cell-group__title" style="text-align: center">
-    点击下载
-  </h4>
-  <a :href="url">
-    <van-image :src="logoImgUrl" width="6rem" radius="16" />
-    <van-icon name="down" class="icon" size="3rem" />
-  </a>
-  <div style="text-align: center; padding-top: 0" class="van-cell-group__title">
-    {{ version }}
+  <div class="box">
+    <h3>戏曲字幕应用</h3>
+    <div class="van-cell-group__title">心灵的孤僻</div>
+    <van-button
+      plain
+      :url="url"
+      :color="colorValue"
+      icon="down"
+      type="primary"
+      block
+      round
+      >下载<small>({{ version }})</small></van-button
+    >
+    <div class="van-cell-group__title">或扫码</div>
+    <qrcode-vue :value="url" :size="200" level="L" :foreground="colorValue" />
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
-
-const logoImgUrl = ref(import.meta.env.BASE_URL + "logo.png");
-
+import QrcodeVue from "qrcode.vue";
 const version = "v12.2.0";
+
+const colorValue = "#780af6";
 
 const url = `https://gitee.com/xlgp/xiquzimu-apk/releases/download/${version}/xiquzimu_${version}_release.apk`;
 </script>
 <style scoped>
-a {
+.box {
   display: flex;
-  position: relative;
-  width: 6rem;
-  margin: 20px auto;
-}
-.icon {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
+  flex-flow: column;
+  padding: 0 30px;
   align-items: center;
-  display: inline-flex;
   justify-content: center;
-  background: #ffffff8f;
-  color: #780af6;
+  position: fixed;
+  margin-top: -50px;
+  background: linear-gradient(324deg, #9c48fb 0%, white 40%, #9c48fb 97%);
+  background-color: #f1e5ff;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
 }
 </style>
