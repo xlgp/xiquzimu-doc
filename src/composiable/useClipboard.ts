@@ -5,15 +5,9 @@ import ClipboardJS from "clipboard"
 import { showToast } from "vant";
 import "vant/es/toast/style";
 
-export const useClipboard = (text: Ref<string>, collapseNames: string[], copyBtnRef: Ref) => {
+export const useClipboard = (text: Ref<string>, copyBtnRef: Ref) => {
 
     let clipboard: ClipboardJS | null;
-
-    const changeHandler = (activeNames: String[]) => {
-        if (activeNames.includes(collapseNames[2])) {
-            createClipboard();
-        }
-    }
 
     function createClipboard() {
         if (!copyBtnRef.value) {
@@ -29,8 +23,7 @@ export const useClipboard = (text: Ref<string>, collapseNames: string[], copyBtn
             });
 
             clipboard.on('error', function (e) {
-                console.error('Action:', e.action);
-                console.error('Trigger:', e.trigger);
+                console.error(e);
                 showToast("复制失败");
             });
         }
@@ -50,7 +43,7 @@ export const useClipboard = (text: Ref<string>, collapseNames: string[], copyBtn
     });
 
     return {
-        changeHandler,
         copyHandler,
+        createClipboard
     }
 }
