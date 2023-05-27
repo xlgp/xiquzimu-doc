@@ -33,7 +33,7 @@ const url = `https://gitee.com/xlgp/xiquzimu-apk/releases/download/${version}/xi
   justify-content: center;
   position: fixed;
   margin-top: -50px;
-  background: linear-gradient(324deg, #9c48fb 0%, white 40%, #9c48fb 97%);
+  background: linear-gradient(324deg, #d9b7ff 0%, white 40%, #d9b7ff 97%);
   background-color: #f1e5ff;
   right: 0;
   left: 0;

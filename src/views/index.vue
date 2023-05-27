@@ -5,6 +5,7 @@
   </header>
   <van-cell-group title="应用">
     <van-cell center title="功能简介" value="查看" to="howToUse" is-link />
+    <van-cell center title="戏曲字幕" value="去下载" to="download" is-link />
   </van-cell-group>
   <van-cell-group title="唱段">
     <van-cell
