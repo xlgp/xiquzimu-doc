@@ -1,6 +1,18 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Index from "./views/index.vue"
 
+/**
+ * 是否来自本网站
+ * @param location 
+ * @param referrer 
+ * @returns true or false
+ */
+const fromHost = (location: Location, referrer: string) => {
+    return referrer && referrer.includes(location.hostname);
+}
+
+
+
 const routes = [
     { path: '/', name: "Index", component: Index, meta: { title: "首页" } },
     { path: "/openAccesibilityService", name: "openAccesibilityService", meta: { title: "如何开启无障碍服务" }, component: () => import("./views/helpCenter/openAccesibilityService.vue") },
@@ -10,7 +22,14 @@ const routes = [
     { path: "/download", name: "download", meta: { title: "应用下载" }, component: () => import("./views/download/index.vue") },
     { path: "/howToUse", name: "howToUse", meta: { title: "功能简介" }, component: () => import("./views/features/index.vue") },
     //跳回首页
-    { path: '/:pathMatch(.*)*', name: 'NotFound', redirect: "/" },
+    {
+        path: '/:pathMatch(.*)*', name: 'NotFound', redirect: (to: any) => {
+            if (fromHost(window.location, document.referrer)) {
+                return "/";
+            }
+            window.location.href = "/";
+        }
+    },
 ]
 
 export default createRouter({
