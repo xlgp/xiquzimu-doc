@@ -23,11 +23,11 @@ const routes = [
     { path: "/howToUse", name: "howToUse", meta: { title: "功能简介" }, component: () => import("./views/features/index.vue") },
     //跳回首页
     {
-        path: '/:pathMatch(.*)*', name: 'NotFound', redirect: (to: any) => {
-            if (fromHost(window.location, document.referrer)) {
-                return "/";
+        path: '/:pathMatch(.*)*', name: 'NotFound', redirect: () => {
+            if (!fromHost(window.location, document.referrer)) {
+                window.location.href = window.location.pathname;
             }
-            window.location.href = "/";
+            return "/";
         }
     },
 ]
