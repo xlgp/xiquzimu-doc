@@ -6,7 +6,6 @@ specifiers:
   '@vitejs/plugin-vue': ^4.1.0
   clipboard: ^2.0.11
   qrcode-vue3: ^1.6.8
-  qrcode.vue: ^3.4.0
   terser: ^5.17.4
   typescript: ^5.0.2
   unplugin-vue-components: ^0.24.1
@@ -19,7 +18,6 @@ specifiers:
 dependencies:
   clipboard: 2.0.11
   qrcode-vue3: 1.6.8
-  qrcode.vue: 3.4.0_vue@3.3.2
   vant: 4.3.2_vue@3.3.2
   vue: 3.3.2
   vue-router: 4.2.0_vue@3.3.2
@@ -2110,14 +2108,6 @@ packages:
     resolution: {integrity: sha512-LtMnwKWi58ZqHbXBcsTF/VxDYhI6RrBIrDQw8fbDVlO8p5tJBZa7TaIaVYLY937vKO2WCEBmOKksGlpm5ccEIg==}
     dependencies:
       qrcode-generator: 1.4.4
-    dev: false
-
-  /qrcode.vue/3.4.0_vue@3.3.2:
-    resolution: {integrity: sha512-4XeImbv10Fin16Fl2DArCMhGyAdvIg2jb7vDT+hZiIAMg/6H6mz9nUZr/dR8jBcun5VzNzkiwKhiqOGbloinwA==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      vue: 3.3.2
     dev: false
 
   /queue-microtask/1.2.3:

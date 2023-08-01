@@ -13,7 +13,7 @@
       >下载<small>({{ version }})</small></van-button
     >
     <div class="van-cell-group__title">或扫码</div>
-    <qrcode />
+    <ApkQrcode />
     <van-button
       :data-clipboard-text="appDownloadUrl"
       ref="copyBtnRef"
@@ -33,7 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import Qrcode from "./component/qrcode.vue";
+import ApkQrcode from "./component/apk-qrcode.vue";
 import { useClipboard } from "../../composiable/useClipboard";
 import { ref } from "vue";
 import constants from "../../constants";
