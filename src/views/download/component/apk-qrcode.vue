@@ -21,8 +21,7 @@
     :cornersSquareOptions="{ type: 'extra-rounded', color }"
     :cornersDotOptions="{ type: undefined, color }"
     fileExt="png"
-    image="/logo.png"
-    margin="0"
+    :image="iamgeUrl"
   />
 </template>
 <script setup lang="ts">
@@ -33,4 +32,6 @@ const { apkInfo } = constants;
 const { apkDownloadUrl } = apkInfo;
 
 const color = "#780af6dd";
+
+const iamgeUrl = import.meta.env.BASE_URL + "logo.png";
 </script>
