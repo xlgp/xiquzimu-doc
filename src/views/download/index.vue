@@ -2,32 +2,53 @@
   <div class="box">
     <h3>戏曲字幕应用</h3>
     <div class="van-cell-group__title">心灵的孤僻</div>
-    <van-button plain :url="url" :color="colorValue" icon="down" type="primary" block round>下载<small>({{ version
-    }})</small></van-button>
+    <van-button
+      plain
+      :url="apkDownloadUrl"
+      :color="colorValue"
+      icon="down"
+      type="primary"
+      block
+      round
+      >下载<small>({{ version }})</small></van-button
+    >
     <div class="van-cell-group__title">或扫码</div>
-    <qrcode-vue :value="url" :size="200" level="L" :foreground="colorValue" />
-    <van-button :data-clipboard-text="appDownloadUrl" ref="copyBtnRef" type="primary" size="mini" plain
-      :color="colorValue" block round @click="copyHandler" class="copybtn">或者点我复制下载链接</van-button>
-    <div class="tip">复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk</div>
+    <qrcode />
+    <van-button
+      :data-clipboard-text="appDownloadUrl"
+      ref="copyBtnRef"
+      type="primary"
+      size="mini"
+      plain
+      :color="colorValue"
+      block
+      round
+      @click="copyHandler"
+      class="copybtn"
+      >或者点我复制下载链接</van-button
+    >
+    <div class="tip">
+      复制链接后，请在浏览器中打开链接，并下载最新的xiquzimu_vx.y.z_release.apk
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-import QrcodeVue from "qrcode.vue";
-import { useClipboard } from "../../composiable/useClipboard"
+import Qrcode from "./component/qrcode.vue";
+import { useClipboard } from "../../composiable/useClipboard";
 import { ref } from "vue";
+import constants from "../../constants";
 
-const version = import.meta.env.XQZM_APP_VERSION;
+const { apkInfo, defaultColorValue } = constants;
+
+const { apkDownloadUrl, version } = apkInfo;
 
 const appDownloadUrl = ref(import.meta.env.XQZM_APP_DOWNLOAD_URL);
 
-const colorValue = "#780af6";
+const colorValue = defaultColorValue;
 
 const copyBtnRef = ref();
 
-const url = `https://gitee.com/xlgp/xiquzimu-apk/releases/download/${version}/xiquzimu_${version}_release.apk`;
-
 const { copyHandler } = useClipboard(appDownloadUrl, copyBtnRef);
-
 </script>
 <style scoped>
 .box {
