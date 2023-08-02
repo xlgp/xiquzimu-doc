@@ -1,7 +1,7 @@
 <template>
   <QRCodeVue3
-    :width="300"
-    :height="300"
+    :width="240"
+    :height="240"
     :value="apkDownloadUrl"
     :qrOptions="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'H' }"
     :imageOptions="{ hideBackgroundDots: true, imageSize: 0.2, margin: 2 }"
