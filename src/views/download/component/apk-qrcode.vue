@@ -17,7 +17,7 @@
         ],
       },
     }"
-    :backgroundOptions="{ color: '#ffffff00' }"
+    :backgroundOptions="{ color: 'transparent' }"
     :cornersSquareOptions="{ type: 'extra-rounded', color }"
     :cornersDotOptions="{ type: undefined, color }"
     fileExt="png"
@@ -31,7 +31,7 @@ import constants from "../../../constants";
 const { apkInfo } = constants;
 const { apkDownloadUrl } = apkInfo;
 
-const color = "#780af6dd";
+const color = "#780af6";
 
 const iamgeUrl = import.meta.env.BASE_URL + "logo.png";
 </script>
