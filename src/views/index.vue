@@ -1,6 +1,6 @@
 <template>
   <header>
-    <van-image width="100" height="100" :src="url.logo" />
+    <van-icon class-prefix="zimuicon" name="xin" size="7rem" :color="defaultColorValue"/>
     <h2>戏曲字幕服务中心</h2>
     <div class="van-cell-group__title">一款应用于戏曲直播时自动发送字幕的软件。</div>
   </header>
@@ -13,7 +13,7 @@
     </van-col>
     <van-col span="12">
       <div class="x-van-col" @click="toChangDuan">
-        <van-icon :name="url.icChangCi" size="2rem" class="col-icon" />
+        <van-icon class-prefix="zimuicon" name="changci" size="2rem" class="col-icon" />
         <div class="icon-text">唱段</div>
       </div>
     </van-col>
@@ -46,6 +46,9 @@
 import { computed } from "vue";
 
 import { useRoute, useRouter } from "vue-router";
+import constants from "../constants";
+
+const { defaultColorValue } = constants;
 
 const { query } = useRoute();
 const isOpenAccesibilityService = computed(
@@ -54,13 +57,6 @@ const isOpenAccesibilityService = computed(
 const isDownload = computed(() => query.item && query.item == "download");
 
 const giteeChangDuanUrl = "https://gitee.com/xlgp/opera-lyrics/tree/master";
-
-console.log(import.meta.env.BASE_URL);
-
-const url = {
-  logo: import.meta.env.BASE_URL + "logo.svg",
-  icChangCi: import.meta.env.BASE_URL + "ic_changci.svg",
-};
 
 const router = useRouter();
 
@@ -93,7 +89,7 @@ const toChangDuan = () => {
 }
 
 header {
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
