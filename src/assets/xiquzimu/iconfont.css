@@ -1,8 +1,8 @@
 @font-face {
   font-family: "zimuicon"; /* Project id 4193331 */
-  src: url('iconfont.woff2?t=1690942682763') format('woff2'),
-       url('iconfont.woff?t=1690942682763') format('woff'),
-       url('iconfont.ttf?t=1690942682763') format('truetype');
+  src: url('iconfont.woff2?t=1692260923283') format('woff2'),
+       url('iconfont.woff?t=1692260923283') format('woff'),
+       url('iconfont.ttf?t=1692260923283') format('truetype');
 }
 
 .zimuicon {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.zimuicon-github:before {
+  content: "\e645";
+}
+
+.zimuicon-gitlab:before {
+  content: "\e65c";
+}
+
+.zimuicon-gitee:before {
+  content: "\e60c";
 }
 
 .zimuicon-xin:before {

@@ -1,23 +1,39 @@
 <template>
   <header>
-    <van-icon class-prefix="zimuicon" name="xin" size="7rem" :color="defaultColorValue"/>
-    <h2>戏曲字幕服务中心</h2>
-    <div class="van-cell-group__title">一款应用于戏曲直播时自动发送字幕的软件。</div>
+    <h2>
+      <van-icon
+        class-prefix="zimuicon"
+        name="xin"
+        :color="defaultColorValue"
+        size="3rem"
+        style="vertical-align: middle"
+      />戏曲字幕服务中心
+    </h2>
+    <div class="van-cell-group__title" style="padding-top: 0">
+      一款应用于戏曲直播时自动发送字幕的软件。
+    </div>
   </header>
-  <van-row gutter="20">
-    <van-col span="12">
-      <div class="x-van-col" :class="{ 'tip-bg': isDownload }" @click="toDownload">
-        <van-icon name="down" size="2rem" class="col-icon" />
-        <div class="icon-text">去下载</div>
-      </div>
-    </van-col>
-    <van-col span="12">
-      <div class="x-van-col" @click="toChangDuan">
-        <van-icon class-prefix="zimuicon" name="changci" size="2rem" class="col-icon" />
-        <div class="icon-text">唱段</div>
-      </div>
-    </van-col>
-  </van-row>
+  <div class="x-van-col" :class="{ 'tip-bg': isDownload }" @click="toDownload">
+    <van-icon name="down" size="2rem" class="col-icon" />
+    <div class="icon-text">去下载</div>
+  </div>
+  <div style="padding: var(--van-cell-group-title-padding); padding-bottom: 0">
+    <van-icon class-prefix="zimuicon" name="changci" size="1.5rem" />
+    <span style="padding-left: 10px; color: var(--van-gray-6)">唱段</span>
+  </div>
+  <div class="x-van-col">
+    <van-icon
+      class-prefix="zimuicon"
+      :name="item.name"
+      size="2rem"
+      class="col-icon"
+      :color="item.color"
+      v-for="item in changDuanList"
+      @click="toChangDuan(item)"
+    >
+      <i style="font-size: initial">{{ item.name }}</i>
+    </van-icon>
+  </div>
   <van-cell-group title="应用">
     <van-cell title="功能简介" value="查看" to="howToUse" is-link />
   </van-cell-group>
@@ -56,7 +72,29 @@ const isOpenAccesibilityService = computed(
 );
 const isDownload = computed(() => query.item && query.item == "download");
 
-const giteeChangDuanUrl = "https://gitee.com/xlgp/opera-lyrics/tree/master";
+type ChangDuanItemType = {
+  name: string;
+  url: string;
+  color: string;
+};
+
+const changDuanList: ChangDuanItemType[] = [
+  {
+    name: "gitee",
+    url: "https://gitee.com/xlgp/opera-lyrics/tree/master",
+    color: "rgb(199, 29, 35)",
+  },
+  {
+    name: "github",
+    url: "https://github.com/xlgp/opera-lyrics/tree/master",
+    color: "#1F2328",
+  },
+  {
+    name: "gitlab",
+    url: "https://gitlab.com/xlgp/opera-lyrics/tree/master",
+    color: "#fc6d26",
+  },
+];
 
 const router = useRouter();
 
@@ -64,8 +102,8 @@ const toDownload = () => {
   router.push("/download");
 };
 
-const toChangDuan = () => {
-  window.location.href = giteeChangDuanUrl;
+const toChangDuan = (item: ChangDuanItemType) => {
+  window.location.href = item.url;
 };
 </script>
 <style scoped>
@@ -75,9 +113,7 @@ const toChangDuan = () => {
   align-items: center;
   border-radius: 16px;
   margin: 10px;
-  flex-direction: column;
   background-color: #f7f7f7;
-  padding-bottom: 20px;
 }
 
 .icon-text {
