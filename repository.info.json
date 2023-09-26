@@ -1,0 +1,18 @@
+[
+    {
+        "name": "opera-lyrics",
+        "username": "xlgp",
+        "originName": "Gitee",
+        "originHost": "gitee.com",
+        "branch": "master",
+        "baseUrl": "https://gitee.com/xlgp/opera-lyrics/raw/master/"
+    },
+    {
+        "name": "opera-lyrics",
+        "username": "xlgp",
+        "originName": "Gitlab",
+        "originHost": "gitlab.com",
+        "branch": "master",
+        "baseUrl": "https://gitlab.com/xlgp/opera-lyrics/-/raw/master/"
+    }
+]
