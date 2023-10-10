@@ -1,0 +1,36 @@
+<template>
+  <main style="padding: 20px">
+    <h2>无障碍服务快捷开启方式</h2>
+    <van-notice-bar color="#780af6" background="#f8f1ff" wrapable :scrollable="false" left-icon="info-o">
+      目前系统只允许添加一个无障碍快捷方式，若您已经添加别的无障碍快捷方式，可忽略下文
+    </van-notice-bar>
+    <h4>添加无障碍快捷方式</h4>
+    <p>
+      打开无障碍服务系统设置，找到无障碍服务快捷方式并开启，再根据系统提示选择戏曲字幕即可。
+    </p>
+    <h4>开启无障碍快捷方式</h4>
+    <p>
+      添加戏曲字幕至无障碍快捷方式后，根据系统提示，长按上下音量键3秒后，无障碍服务会自动开启。
+    </p>
+    <p>手机型号不同，无障碍快捷方式位置也不同。根据自己的手机型号，自行查找。</p>
+    <h3>荣耀x8添加方式如下：</h3>
+    <p>
+      <van-image
+        src="https://xlgp.gitee.io/static/xiquzimu/openAccessibilityServiceShortCut-1.jpg"
+        fit="scale-down"
+      />
+    </p>
+    <p>
+      <van-image
+        src="https://xlgp.gitee.io/static/xiquzimu/openAccessibilityServiceShortCut-2.jpg"
+        fit="scale-down"
+      />
+    </p>
+    <p>
+      <van-image
+        src="https://xlgp.gitee.io/static/xiquzimu/openAccessibilityServiceShortCut-3.jpg"
+        fit="scale-down"
+      />
+    </p>
+  </main>
+</template>

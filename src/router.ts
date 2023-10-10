@@ -15,8 +15,9 @@ const fromHost = (location: Location, referrer: string) => {
 
 const routes = [
     { path: '/', name: "Index", component: Index, meta: { title: "首页" } },
-    { path: "/openAccesibilityService", name: "openAccesibilityService", meta: { title: "如何开启无障碍服务" }, component: () => import("./views/helpCenter/openAccesibilityService.vue") },
-    { path: "/WhyIsAutoCloseAccesibilityService", name: "WhyIsAutoCloseAccesibilityService", meta: { title: "为什么无障碍服务会自动关闭" }, component: () => import("./views/helpCenter/WhyIsAutoCloseAccesibilityService.vue") },
+    { path: "/openAccessibilityService", name: "openAccessibilityService", meta: { title: "如何开启无障碍服务" }, component: () => import("./views/helpCenter/openAccessibilityService.vue") },
+    { path: "/WhyIsAutoCloseAccessibilityService", name: "WhyIsAutoCloseAccessibilityService", meta: { title: "为什么无障碍服务会自动关闭" }, component: () => import("./views/helpCenter/WhyIsAutoCloseAccessibilityService.vue") },
+    { path: "/openAccessibilityServiceShortCut", name: "openAccessibilityServiceShortCut", meta: { title: "无障碍服务快捷开启方式" }, component: () => import("./views/helpCenter/openAccessibilityServiceShortCut.vue") },
     { path: "/agreement", name: "agreement", meta: { title: "用户协议" }, component: () => import("./views/agreement-privacy/agreement.vue") },
     { path: "/privacy", name: "privacy", meta: { title: "隐私政策" }, component: () => import("./views/agreement-privacy/privacy.vue") },
     { path: "/download", name: "download", meta: { title: "应用下载" }, component: () => import("./views/download/index.vue") },
