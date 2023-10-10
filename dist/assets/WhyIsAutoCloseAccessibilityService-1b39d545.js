@@ -1,1 +1,0 @@
-import{_ as s,o as c,c as t,a as e}from"./index-3f01bbd7.js";const o={},i={style:{padding:"20px"}},n=e("p",null,"因为无障碍服务（AccessibilityService）是系统服务，由系统控制开启和关闭。",-1),_=e("p",null,"系统为避免造成更大负担，进而可能导致用户体验下降，当戏曲字幕应用进入后台数分钟后系统将停止无障碍服务（AccessibilityService）。",-1),r=[n,_];function a(l,d){return c(),t("div",i,r)}const f=s(o,[["render",a]]);export{f as default};
