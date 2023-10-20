@@ -35,6 +35,12 @@
   </div>
   <van-cell-group title="应用">
     <van-cell title="功能简介" value="查看" to="howToUse" is-link />
+    <van-cell
+      title="唱词制作"
+      value="PC端访问"
+      url="https://xlgp.gitee.io/opera-lyrics-builder/"
+      is-link
+    />
   </van-cell-group>
   <van-cell-group title="常见问题">
     <van-cell
