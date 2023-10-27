@@ -11,6 +11,15 @@
       <span style="font-size: 1.5rem"> 戏曲字幕服务中心 </span>
     </div>
     <div class="van-cell-group__title">一款应用于戏曲直播时自动发送字幕的软件。</div>
+    <van-notice-bar
+      color="#780af6"
+      background="#f8f1ff"
+      wrapable
+      :scrollable="false"
+      left-icon="info-o"
+    >
+      18.2.0版无法自动检测升级软件，可以自行下载并安装最新版的APK。
+    </van-notice-bar>
   </header>
   <div class="x-van-col" :class="{ 'tip-bg': isDownload }" @click="toDownload">
     <van-icon name="down" size="2rem" class="col-icon" />
