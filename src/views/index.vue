@@ -50,6 +50,12 @@
       url="https://xlgp.gitee.io/opera-lyrics-builder/"
       is-link
     />
+    <van-cell
+      title="戏曲字幕日志"
+      value="查看"
+      url="https://xlgp.gitee.io/xiquzimu-log/index.html"
+      is-link
+    />
   </van-cell-group>
   <van-cell-group title="常见问题">
     <van-cell
