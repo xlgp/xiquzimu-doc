@@ -18,7 +18,7 @@
       :scrollable="false"
       left-icon="info-o"
     >
-      18.2.0版无法自动检测升级软件，可以自行下载并安装最新版的APK。
+      18.0.0版无法自动检测升级软件，可以自行下载并安装最新版的APK。
     </van-notice-bar>
   </header>
   <div class="x-van-col" :class="{ 'tip-bg': isDownload }" @click="toDownload">
