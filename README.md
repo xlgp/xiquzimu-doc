@@ -1,18 +1,43 @@
-# Vue 3 + TypeScript + Vite
+# 戏曲字幕
+> ### 戏曲直播 自送字幕
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> #### 介绍
 
-## Recommended IDE Setup
+戏曲字幕是一款应用于戏曲直播时自动发送字幕的软件。黄梅戏、越剧、京剧等戏曲主播在网络直播时，观众或主播字幕人员可使用戏曲字幕发布送戏曲唱词，以便让观看者在聆听主播唱戏的同时能看见戏曲唱词，更好的理解戏曲，达到更佳的观看体验。
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+> #### 应用展示
+##### 戏曲字幕应用
+![戏曲字幕应用](https://gitee.com/xlgp/static/raw/master/xiquzimu/xiquzimu.png "戏曲字幕应用")
+##### 字幕界面
+![字幕界面](https://gitee.com/xlgp/static/raw/master/xiquzimu/zimu.png "字幕界面")
 
-## Type Support For `.vue` Imports in TS
+> #### 下载
+下载地址（https://xlgp.gitee.io/xiquzimu-doc/#/download）
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+> #### 字幕数据库
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+字幕数据储存于Git远程仓库。
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+| 仓库服务器      | 地址 |备注|
+| :-----------: | :-----------: | ----------- |
+| Gitee      | [戏曲唱词](https://gitee.com/xlgp/opera-lyrics)       |偶尔会被屏蔽，可能无法下载|
+| Github   | [opera-lyrics](https://gitee.com/xlgp/opera-lyrics)        |内容较全，但可能无法访问|
+|Gitlab|[opera-lyrics](https://gitlab.com/xlgp/opera-lyrics/)|内容较全，但可能无法访问|
+
+> #### 使用说明
+1.  根据戏曲主播唱戏时选择对应的唱段即可，戏曲字幕会自动发送戏曲字幕。
+2.  由于有网络延时，发送字幕时可能会延后，此时自己调节一下即可。
+
+
+##### 抖音视频
+
+[戏曲字幕使用教程](https://www.douyin.com/video/7242851375825112354)
+
+> #### 权限
+
+戏曲字幕需要开启无障碍功能服务。
+
+
+> #### 制作字幕
+
+[https://xlgp.gitee.io/opera-lyrics-builder/](https://xlgp.gitee.io/opera-lyrics-builder/)
