@@ -12,7 +12,7 @@
 ![字幕界面](https://gitee.com/xlgp/static/raw/master/xiquzimu/zimu.png "字幕界面")
 
 > #### 下载
-下载地址（https://xlgp.gitee.io/xiquzimu-doc/#/download）
+下载地址（<a href="https://xlgp.gitee.io/xiquzimu-doc/#/download" target="_blank">https://xlgp.gitee.io/xiquzimu-doc/#/download</a>）
 
 > #### 字幕数据库
 
@@ -20,9 +20,9 @@
 
 | 仓库服务器      | 地址 |备注|
 | :-----------: | :-----------: | ----------- |
-| Gitee      | [戏曲唱词](https://gitee.com/xlgp/opera-lyrics)       |偶尔会被屏蔽，可能无法下载|
-| Github   | [opera-lyrics](https://gitee.com/xlgp/opera-lyrics)        |内容较全，但可能无法访问|
-|Gitlab|[opera-lyrics](https://gitlab.com/xlgp/opera-lyrics/)|内容较全，但可能无法访问|
+| Gitee      | <a href="https://gitee.com/xlgp/opera-lyrics" target="_blank">戏曲唱词</a>      |偶尔会被屏蔽，可能无法下载|
+| Github   |<a href="https://github.com/xlgp/opera-lyrics" target="_blank">opera-lyrics</a>|内容较全，但可能无法访问|
+|Gitlab|<a href="https://gitlab.com/xlgp/opera-lyrics" target="_blank">opera-lyrics</a>|内容较全，但可能无法访问|
 
 > #### 使用说明
 1.  根据戏曲主播唱戏时选择对应的唱段即可，戏曲字幕会自动发送戏曲字幕。
@@ -30,8 +30,7 @@
 
 
 ##### 抖音视频
-
-[戏曲字幕使用教程](https://www.douyin.com/video/7242851375825112354)
+<a href="https://www.douyin.com/video/7242851375825112354" target="_blank">戏曲字幕使用教程</a>
 
 > #### 权限
 
@@ -40,4 +39,4 @@
 
 > #### 制作字幕
 
-[https://xlgp.gitee.io/opera-lyrics-builder/](https://xlgp.gitee.io/opera-lyrics-builder/)
+<a href="https://xlgp.gitee.io/opera-lyrics-builder/" target="_blank">https://xlgp.gitee.io/opera-lyrics-builder/</a>
