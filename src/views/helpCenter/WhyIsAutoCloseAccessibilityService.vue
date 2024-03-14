@@ -11,19 +11,19 @@
   <h3>用户可以锁定戏曲字幕应用，避免系统关闭无障碍服务。</h3>
   <p>
     <van-image
-      src="https://xlgp.gitee.io/static/xiquzimu/xiquzimu-suoding-1.jpg"
+      src="https://xlgp.gitee.io/static/xiquzimu/xiquzimu-suoding-1.png"
       fit="scale-down"
     />
   </p>
   <p>
     <van-image
-      src="https://xlgp.gitee.io/static/xiquzimu/xiquzimu-suoding-2.jpg"
+      src="https://xlgp.gitee.io/static/xiquzimu/xiquzimu-suoding-2.png"
       fit="scale-down"
     />
   </p>
   <p>
     <van-image
-      src="https://xlgp.gitee.io/static/xiquzimu/xiquzimu-suoding-3.jpg"
+      src="https://xlgp.gitee.io/static/xiquzimu/xiquzimu-suoding-3.png"
       fit="scale-down"
     />
   </p>
