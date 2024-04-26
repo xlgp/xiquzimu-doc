@@ -9,6 +9,12 @@
     </p>
   </div>
   <h3>用户可以锁定戏曲字幕应用，避免系统关闭无障碍服务。</h3>
+  <h5>
+    <a href="https://consumer.huawei.com/cn/support/content/zh-cn00410039/"
+      >华为手机/平板无障碍中的第三方应用的服务开关自动关闭</a
+    >
+  </h5>
+  <h5>vivo手机设置如下：</h5>
   <p>
     <van-image
       src="https://xlgp.gitee.io/static/xiquzimu/xiquzimu-suoding-1.png"
