@@ -12,7 +12,7 @@
 ![字幕界面](https://gitee.com/xlgp/static/raw/master/xiquzimu/zimu.png "字幕界面")
 
 > #### 下载
-下载地址（<a href="https://xlgp.gitee.io/xiquzimu-doc/#/download" target="_blank">https://xlgp.gitee.io/xiquzimu-doc/#/download</a>）
+下载地址（<a href="https://xlgp.github.io/xiquzimu-doc/download.html" target="_blank">https://xlgp.github.io/xiquzimu-doc/download.html</a>）
 
 > #### 字幕数据库
 
