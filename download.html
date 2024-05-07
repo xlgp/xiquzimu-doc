@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载戏曲字幕应用</title>
+    <style>
+
+        .download-link {
+            padding: 16px 10px;
+            background: #ecdcfb;
+            border: 1px solid;
+            margin: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .gitee-link {
+            border: 1px dashed;
+            padding: 8px;
+            line-height: 1.6;
+            text-decoration: none;
+            display: flex;
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>戏曲字幕应用</h3>
+    <a class="download-link"
+        href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v24.4.0(3252)/xiquzimu_v24.4.0(3252)_release.apk">下载戏曲字幕（v24.4.0(3252)）</a>
+
+    <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
+    <p>本页面地址：</p>
+    <a id="myLocaltion" class="gitee-link"
+        href="https://xlgp.github.io/xiquzimu-doc/download.html">https://xlgp.github.io/xiquzimu-doc/download.html</a>
+    <p>若点击上按钮无法下载，则可以手动复制以下链接并用浏览器打开，前往Gitee下载戏曲字幕。</p>
+    <a class="gitee-link"
+        href="https://gitee.com/xlgp/xiquzimu-apk/releases/">https://gitee.com/xlgp/xiquzimu-apk/releases/</a>
+</body>
+<script>
+
+    let myHref = window.location.href;
+    let myLocaltion = document.getElementById("myLocaltion");
+    myLocaltion.innerText = myHref;
+    myLocaltion.href =myHref;
+    
+</script>
+</html>
