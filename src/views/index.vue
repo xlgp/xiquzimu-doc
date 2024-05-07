@@ -86,7 +86,7 @@
   </van-cell-group>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 import { useRoute, useRouter } from "vue-router";
 import constants from "../constants";
@@ -123,10 +123,9 @@ const changDuanList: ChangDuanItemType[] = [
   },
 ];
 
-const router = useRouter();
-
+const appDownloadUrl = ref(import.meta.env.XQZM_APP_DOWNLOAD_URL);
 const toDownload = () => {
-  router.push("/download");
+  window.location.href = appDownloadUrl;
 };
 
 const toChangDuan = (item: ChangDuanItemType) => {
