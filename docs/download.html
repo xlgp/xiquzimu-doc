@@ -7,12 +7,31 @@
     <title>下载戏曲字幕应用</title>
     <style>
         .download-link {
-            padding: 16px 10px;
-            background: #ecdcfb;
-            border: 1px solid;
-            margin: 10px;
+            display: block;
+            padding: 20px 8px;
+            text-align: center;
+            color: white;
+        }
+
+        .download-item {
+            border: solid 1px #580e9d;
             border-radius: 6px;
+            background-color: #580ba1;
+            margin: 0 8px;
+        }
+
+        .download-tip {
+            text-align: center;
+            font-size: small;
+            padding: 10px 4px;
+            background-color: #ecdcfb;
+            color: #272525;
+            border-radius: 4px;
+        }
+
+        .download-box {
             display: flex;
+            flex-direction: row;
             justify-content: space-around;
         }
 
@@ -29,9 +48,18 @@
 
 <body>
     <h3>戏曲字幕应用</h3>
-    <a class="download-link"
-        href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v24.7.0(3285)/xiquzimu_v24.7.0(3285)_release.apk">下载戏曲字幕（v24.7.0(3285)）</a>
-
+    <div class="download-box">
+        <div class="download-item">
+            <a class="download-link"
+                href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v24.7.0(3285)/xiquzimu_v24.7.0(3285)_release.apk">下载戏曲字幕（v24.7.0(3285)）</a>
+            <div class="download-tip">来源：Gitee</div>
+        </div>
+        <div class="download-item">
+            <a class="download-link"
+                href="https://github.com/xlgp/xiquzimu-apk/releases/download/v24.7.0(3285)/xiquzimu_v24.7.0.3285._release.apk">下载戏曲字幕（v24.7.0(3285)）</a>
+            <div class="download-tip">来源：Github</div>
+        </div>
+    </div>
     <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
     <p>本页面地址：</p>
     <div id="myLocaltion" class="gitee-link">https://xlgp.github.io/xiquzimu-doc/download.html</div>
