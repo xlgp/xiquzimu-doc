@@ -53,13 +53,27 @@
         }
 
         fieldset {
-            border: 1px dashed;
+            border: none;
             border-radius: 6px;
             margin-bottom: 1em;
+            background: #0e1012;
         }
 
         fieldset>legend {
-            padding: 0 10px;
+            padding: 8px 16px;
+            background: #0e1012;
+            border-radius: 4px;
+            color: white;
+            margin-left: -0.75em;
+        }
+
+        code {
+            background: #0e1012;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #dbdbdb;
+            display: block;
+            font-family: courier, monospace;
         }
     </style>
 </head>
@@ -85,16 +99,19 @@
         </div>
     </div>
     <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
-    <p>本页面地址：</p>
-    <div id="myLocaltion" class="gitee-link">https://xlgp.github.io/xiquzimu-doc/download.html</div>
+    <fieldset>
+        <legend>本页面地址：</legend>
+        <code id="myLocaltion">https://xlgp.github.io/xiquzimu-doc/download.html</code>
+    </fieldset>
+
     <p>若点击上按钮无法下载，则可以手动复制以下链接并用浏览器打开，前往Gitee或者Github下载戏曲字幕。</p>
     <fieldset>
         <legend>Gitee 下载页面</legend>
-        <div>https://gitee.com/xlgp/xiquzimu-apk/releases/</div>
+        <code>https://gitee.com/xlgp/xiquzimu-apk/releases/</code>
     </fieldset>
     <fieldset>
         <legend>Gitee 下载页面</legend>
-        <div>https://github.com/xlgp/xiquzimu-apk/releases/</div>
+        <code>https://github.com/xlgp/xiquzimu-apk/releases/</code>
     </fieldset>
 </body>
 <script>
