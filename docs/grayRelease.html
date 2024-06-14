@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>戏曲字幕灰度测试</title>
+    <style>
+        .download-link {
+            display: block;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+
+        .download-item {
+            border: solid 1px #6f6479;
+            border-radius: 6px;
+            background-color: #6f6479;
+            margin: 0 8px;
+            overflow: hidden;
+        }
+
+        .download-tip {
+            text-align: center;
+            font-weight: bold;
+            padding: 10px 4px;
+            background-color: #3e3e3f;
+            color: #f3f3f3;
+            box-shadow: 0px -1px 8px 0px #3e3e3f;
+        }
+
+        .download-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .download-link-version {
+            font-size: small;
+            margin-top: 6px;
+            color: #ffffffcc;
+        }
+
+        .gitee-link {
+            border: 1px dashed;
+            padding: 8px;
+            line-height: 1.6;
+            text-decoration: none;
+            display: flex;
+            margin: 4px;
+        }
+
+        fieldset {
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 1em;
+            background: #0e1012;
+        }
+
+        fieldset>legend {
+            padding: 8px 16px;
+            background: #0e1012;
+            border-radius: 4px;
+            color: white;
+            margin-left: -0.75em;
+        }
+
+        code {
+            color: #dbdbdb;
+            font-family: courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>戏曲字幕应用灰度发布</h3>
+    <div class="download-box">
+        <div class="download-item">
+            <a class="download-link"
+                href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.1.0(3424)_grayrelease/xiquzimu_v25.1.0(3424)_grayrelease.apk">
+                <div>下载戏曲字幕</div>
+                <div class="download-link-version">v25.1.0(3424)_grayrelease</div>
+            </a>
+            <div class="download-tip">Gitee</div>
+        </div>
+    </div>
+    <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
+    <fieldset>
+        <legend>本页面地址：</legend>
+        <code id="myLocaltion"></code>
+    </fieldset>
+
+    <p>若点击上按钮无法下载，则可以手动复制以下链接并用浏览器打开，前往Gitee或者Github下载戏曲字幕。</p>
+    <fieldset>
+        <legend>正式版本</legend>
+        <code id="releaseDownloadUrl"><code>
+    </fieldset>
+</body>
+<script>
+
+    let myHref = window.location.href;
+    let myLocaltion = document.getElementById("myLocaltion");
+    myLocaltion.innerText = myHref;
+
+    const releaseDownloadUrlDom = document.getElementById("releaseDownloadUrl");
+    const path = window.location.href;
+    const basepath = path.substring(0, path.lastIndexOf("/"));
+
+    releaseDownloadUrlDom.innerText = basepath + "/download.html";
+
+</script>
+
+</html>
