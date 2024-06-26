@@ -14,12 +14,25 @@
             text-decoration: none;
         }
 
+        .download-wapper {
+            margin: 0 8px;
+        }
+
         .download-item {
             border: solid 1px #580e9d;
             border-radius: 6px;
             background-color: #580ba1;
-            margin: 0 8px;
             overflow: hidden;
+        }
+
+        .download-link-extra {
+            padding: 6px 6px;
+            background: #0e1012;
+            border-radius: 6px;
+            color: white;
+            font-size: smaller;
+            margin-top: 3px;
+            text-align: center;
         }
 
         .download-tip {
@@ -71,50 +84,92 @@
             color: #dbdbdb;
             font-family: courier, monospace;
         }
+
+        .info {
+
+            background: #c7c7c7;
+            padding: 8px;
+            border-radius: 4px;
+            border-left-width: 10px;
+            border-left-color: #580ba1;
+            border-left-style: solid;
+
+        }
+
+        .info>code {
+            background: #580ba1;
+            padding: 1px 8px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
 <body>
     <h3>戏曲字幕应用</h3>
     <div class="download-box">
-        <div class="download-item">
-            <a class="download-link"
-                href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0(3389)_release.apk">
-                <div>下载戏曲字幕</div>
-                <div class="download-link-version">v25.0.0(3389)</div>
-            </a>
-            <div class="download-tip">Gitee</div>
+        <div class="download-wapper">
+            <div class="download-item">
+                <a class="download-link"
+                    href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0(3389)_release.apk">
+                    <div>下载戏曲字幕</div>
+                    <div class="download-link-version">v25.0.0(3389)</div>
+                </a>
+                <div class="download-tip">Gitee</div>
+            </div>
+            <div class="download-link-extra">点我复制下载链接</div>
         </div>
-        <div class="download-item">
-            <a class="download-link"
-                href="https://github.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0.3389._release.apk">
-                <div>下载戏曲字幕</div>
-                <div class="download-link-version">v25.0.0(3389)</div>
-            </a>
-            <div class="download-tip">Github</div>
+        <div class="download-wapper">
+            <div class="download-item">
+                <a class="download-link"
+                    href="https://github.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0.3389._release.apk">
+                    <div>下载戏曲字幕</div>
+                    <div class="download-link-version">v25.0.0(3389)</div>
+                </a>
+                <div class="download-tip">Github</div>
+            </div>
+            <div class="download-link-extra">点我复制下载链接</div>
         </div>
     </div>
     <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
     <fieldset>
-        <legend>本页面地址：</legend>
+        <legend>本页面地址：<small>（点击链接复制）</small></legend>
         <code id="myLocaltion">https://xlgp.github.io/xiquzimu-doc/download.html</code>
     </fieldset>
-
+    <p class="info">戏曲字幕应用后缀为<code>.apk</code>，若下载后后缀为<code>.zip</code>，是浏览器默认行为，可以改浏览器设置，或者更换浏览器。</p>
     <p>若点击上按钮无法下载，则可以手动复制以下链接并用浏览器打开，前往Gitee或者Github下载戏曲字幕。</p>
     <fieldset>
-        <legend>Gitee 下载页面</legend>
+        <legend>Gitee 下载页面<small>（点击链接复制）</small></legend>
         <code>https://gitee.com/xlgp/xiquzimu-apk/releases/</code>
     </fieldset>
     <fieldset>
-        <legend>Github 下载页面</legend>
+        <legend>Github 下载页面<small>（点击链接复制）</small></legend>
         <code>https://github.com/xlgp/xiquzimu-apk/releases/</code>
     </fieldset>
 </body>
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 <script>
 
     let myHref = window.location.href;
     let myLocaltion = document.getElementById("myLocaltion");
-    myLocaltion.innerText = myHref;    
+    myLocaltion.innerText = myHref;
+
+    const codeElems = document.getElementsByTagName("code");
+    for (const elem of codeElems) {
+        elem.dataset.clipboardText = elem.innerText;
+    }
+
+    const downloadLinkElems = document.getElementsByClassName("download-link-extra");
+    for (const elem of downloadLinkElems) {
+        const linkElem = elem.parentElement.getElementsByClassName("download-link")[0];
+        elem.dataset.clipboardText = linkElem.href;
+        console.log(elem, linkElem);
+    }
+
+</script>
+
+<script>
+    new ClipboardJS('code');
+    new ClipboardJS(".download-link-extra");
 </script>
 
 </html>

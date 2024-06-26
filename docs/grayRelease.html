@@ -78,8 +78,7 @@
     <h3>戏曲字幕应用灰度发布</h3>
     <div class="download-box">
         <div class="download-item">
-            <a class="download-link"
-            target="_blank"
+            <a class="download-link" target="_blank"
                 href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.3.0(3455)_grayRelease/xiquzimu_v25.3.0(3455)_grayRelease.apk">
                 <div>下载戏曲字幕</div>
                 <div class="download-link-version">v25.3.0(3455)_grayRelease</div>
@@ -89,16 +88,17 @@
     </div>
     <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
     <fieldset>
-        <legend>本页面地址：</legend>
-        <code id="myLocaltion"></code>
+        <legend>本页面地址：<small>（点击链接复制）</small></legend>
+        <code class="copy-link" id="myLocaltion"></code>
     </fieldset>
 
     <p>若点击上按钮无法下载，则可以手动复制以下链接并用浏览器打开，前往Gitee或者Github下载戏曲字幕。</p>
     <fieldset>
-        <legend>正式版本</legend>
-        <code id="releaseDownloadUrl"><code>
+        <legend>正式版本<small>（点击链接复制）</small></legend>
+        <code class="copy-link" id="releaseDownloadUrl"><code>
     </fieldset>
 </body>
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 <script>
 
     let myHref = window.location.href;
@@ -111,6 +111,14 @@
 
     releaseDownloadUrlDom.innerText = basepath + "/download.html";
 
+</script>
+
+<script>
+    new ClipboardJS('.copy-link');
+    const codeElems = document.getElementsByClassName("copy-link");
+    for (const elem of codeElems) {
+        elem.dataset.clipboardText = elem.innerText;
+    }
 </script>
 
 </html>
