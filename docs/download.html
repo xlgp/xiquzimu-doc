@@ -101,33 +101,85 @@
             padding: 1px 8px;
             border-radius: 4px;
         }
+
+        header {
+            position: relative;
+        }
+
+        header>a {
+            text-decoration: none;
+            color: grey;
+            position: absolute;
+        }
+
+        header>h3 {
+            text-align: center;
+        }
+
+        .dl-link-box {
+            margin-bottom: 15px;
+            outline: 1px solid #580e9dbd;
+            border-radius: 2px;
+        }
+
+        .dl-link-item {
+            display: flex;
+            justify-content: space-between;
+            background-color: #580e9d2e;
+            color: #580e9d;
+            text-decoration: none;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        .dl-link-tip {
+            padding: 0 14px;
+            color: #575757;
+            display: flex;
+        }
+
+        .dl-link-box .dl-button {
+            color: rgb(255 255 255);
+            background-color: #580e9d;
+            border-radius: 4px;
+            padding: 4px 16px;
+        }
     </style>
 </head>
 
 <body>
-    <h3>戏曲字幕应用</h3>
-    <div class="download-box">
-        <div class="download-wapper">
-            <div class="download-item">
-                <a class="download-link"
-                    href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0(3389)_release.apk">
-                    <div>下载戏曲字幕</div>
-                    <div class="download-link-version">v25.0.0(3389)</div>
-                </a>
-                <div class="download-tip">Gitee</div>
-            </div>
-            <div class="download-link-extra">点我复制下载链接</div>
+    <header>
+        <a href="index.html">《 返回</a>
+        <h3>下载戏曲字幕软件</h3>
+    </header>
+
+    <div class="dl-link-box">
+        <a class="dl-link-item"
+            href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0(3389)_release.apk">
+            <span>v25.0.0(3389)</span>
+            <span class="dl-button">下载</span>
+        </a>
+        <div class="dl-link-tip">
+            <p>此版本适用于鸿蒙系统低版本和安卓系统。若使用中经常出现卡词异常，可重新安装低版本。</p>
         </div>
-        <div class="download-wapper">
-            <div class="download-item">
-                <a class="download-link"
-                    href="https://github.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0.3389._release.apk">
-                    <div>下载戏曲字幕</div>
-                    <div class="download-link-version">v25.0.0(3389)</div>
-                </a>
-                <div class="download-tip">Github</div>
-            </div>
-            <div class="download-link-extra">点我复制下载链接</div>
+    </div>
+    <div class="dl-link-box">
+        <a class="dl-link-item"
+            href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v23.0.0(2897)/xiquzimu_v23.0.0(2897)_release.apk">
+            <span>v23.0.0(2897)</span>
+            <span class="dl-button">下载</span>
+        </a>
+        <div class="dl-link-tip">
+        </div>
+    </div>
+    <div class="dl-link-box">
+        <a class="dl-link-item"
+            href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v18.8.8/xiquzimu_v18.8.8(2000)_douyin_release.apk">
+            <span>v18.8.8(2000)_抖音版</span>
+            <span class="dl-button">下载</span>
+        </a>
+        <div class="dl-link-tip">
+            <p>此版本为较低版本的修复版，仅支持抖音，抖音火山版和抖音极速版。</p>
         </div>
     </div>
     <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
@@ -146,7 +198,7 @@
         <code>https://github.com/xlgp/xiquzimu-apk/releases/</code>
     </fieldset>
 </body>
-<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
 <script>
 
     let myHref = window.location.href;
@@ -166,7 +218,7 @@
     }
 
 </script>
-
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 <script>
     new ClipboardJS('code');
     new ClipboardJS(".download-link-extra");
