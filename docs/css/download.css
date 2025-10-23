@@ -102,6 +102,8 @@ header>a {
     text-decoration: none;
     color: grey;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 header>h3 {

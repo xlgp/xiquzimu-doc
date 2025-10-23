@@ -25,8 +25,20 @@ body {
     background-color: var(--body-bg-color);
 }
 
-a:visited {
-    color: var(--visited-color);
+header {
+    position: relative;
+}
+
+header>a {
+    text-decoration: none;
+    color: grey;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header>h2 {
+    text-align: center;
 }
 
 .log-title {
