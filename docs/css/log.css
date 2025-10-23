@@ -1,0 +1,74 @@
+:root {
+    --body-bg-color: #ffffff;
+    --body-color: #3d3d3d;
+    --small-color: #7b7c7f;
+    --apk-version-color: #1b1b1b;
+    --border-color: #bfbfbf;
+    --visited-color: #2991eb;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg-color: #1e1e1e;
+        --body-color: #e0e4e5;
+        --small-color: #8c8e93;
+        --apk-version-color: #b9b9b9;
+        --border-color: #3f3e3e;
+    }
+}
+
+html,
+body {
+    margin-top: 0px;
+    color: var(--body-color);
+    line-height: 1.68;
+    background-color: var(--body-bg-color);
+}
+
+a:visited {
+    color: var(--visited-color);
+}
+
+.log-title {
+    margin-bottom: 0.3em;
+    margin-top: 0.5em;
+}
+
+.type-red {
+    color: #df2b2b;
+}
+
+.type-blue {
+    color: #3199f3;
+}
+
+.type-orange {
+    color: #f08e1d;
+}
+
+.box {
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin: 10px 0;
+}
+
+.title {
+    text-align: center;
+}
+
+li {
+    margin: 6px 0;
+}
+
+li small {
+    color: var(--small-color);
+}
+
+.apk-version {
+    margin-left: 10px;
+    border: 1px solid;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: var(--apk-version-color);
+}
