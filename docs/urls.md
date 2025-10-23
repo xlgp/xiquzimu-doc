@@ -1,5 +1,5 @@
 documentCenter https://xiquzimu-doc.pages.dev/
-xiquzimuLog    https://xlgp.github.io/xiquzimu-log/
+xiquzimuLog    https://xiquzimu-doc.pages.dev/log.html
 howToStartAccessibilityService https://xiquzimu-doc.pages.dev/
 howToLockApp   https://xiquzimu-doc.pages.dev/
 operaLyricsCommits https://gitlab.com/xlgp/opera-lyrics/-/commits/master
