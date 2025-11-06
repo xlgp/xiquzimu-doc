@@ -14,65 +14,7 @@
         <h3>下载戏曲字幕软件</h3>
     </header>
     <p class="info">本软件适用于Android版和鸿蒙3.0版</p>
-    <div class="dl-link-box">
-        <a class="dl-link-item"
-            href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0(3389)_release.apk">
-            <span>v25.0.0(3389)</span>
-            <span class="dl-button">下载</span>
-        </a>
-        <div class="dl-link-tip">
-            <div class="dl-living-wrapper">
-                <span>适用直播平台：</span>
-                <span>
-                    <span class="dl-living-item">抖音</span>
-                    <span class="dl-living-item">抖音极速版</span>
-                    <span class="dl-living-item">抖音火山版</span>
-                    <span class="dl-living-item">微信视频号</span>
-                </span>
-            </div>
-            <ul>
-                <li>若使用中经常出现卡词异常，可重新安装低版本。</li>
-            </ul>
-        </div>
-    </div>
-    <div class="dl-link-box">
-        <a class="dl-link-item"
-            href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v23.0.0(2897)/xiquzimu_v23.0.0(2897)_release.apk">
-            <span>v23.0.0(2897)</span>
-            <span class="dl-button">下载</span>
-        </a>
-        <div class="dl-link-tip">
-            <div class="dl-living-wrapper">
-                <span>适用直播平台：</span>
-                <span>
-                    <span class="dl-living-item">抖音</span>
-                    <span class="dl-living-item">抖音极速版</span>
-                    <span class="dl-living-item">抖音火山版</span>
-                    <span class="dl-living-item">微信视频号</span>
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="dl-link-box">
-        <a class="dl-link-item"
-            href="https://gitee.com/xlgp/xiquzimu-apk/releases/download/v18.8.8/xiquzimu_v18.8.8(2000)_douyin_release.apk">
-            <span>v18.8.8(2000)_抖音版</span>
-            <span class="dl-button">下载</span>
-        </a>
-        <div class="dl-link-tip">
-            <div class="dl-living-wrapper">
-                <span>适用直播平台：</span>
-                <span>
-                    <span class="dl-living-item">抖音</span>
-                    <span class="dl-living-item">抖音极速版</span>
-                    <span class="dl-living-item">抖音火山版</span>
-                </span>
-            </div>
-            <ul>
-                <li>此版本为较低版本的修复版。</li>
-            </ul>
-        </div>
-    </div>
+    <div id="download-link-list"></div>
     <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
     <fieldset>
         <legend>本页面地址：<small>（点击链接复制）</small></legend>
@@ -89,6 +31,75 @@
         <code>https://github.com/xlgp/xiquzimu-apk/releases/</code>
     </fieldset>
 </body>
+
+<script>
+
+    function createLink(dlInfo) {
+        let living = "";
+        for (const item of dlInfo.living) {
+            living += `<span class="dl-living-item">${item}</span>`;
+        }
+
+        let tips = "";
+        if (Array.isArray(dlInfo.tips) && dlInfo.tips.length > 0) {
+            let lis = "";
+            for (const item of dlInfo.tips) {
+                lis += `<li>${item}</li>`;
+            }
+            tips = `<ul>${lis}</ul>`;
+        }
+
+        let h = `
+    <div class="dl-link-box">
+        <a class="dl-link-item"
+            href="${dlInfo.link}">
+            <span>${dlInfo.version}</span>
+            <span class="dl-button">下载</span>
+        </a>
+        <div class="dl-link-tip">
+            <div class="dl-living-wrapper">
+                <span>适用直播平台：</span>
+                <span>
+                    ${living}
+                </span>
+            </div>
+            ${tips}
+        </div>
+    </div>
+    `
+        return h;
+    }
+
+    function addDownloadLinkElem(parentElement, list) {
+        let html = "";
+        for (const item of list) {
+            html += createLink(item);
+        }
+        parentElement.innerHTML = html;
+    }
+
+    let dlInfos = [
+        {
+            version: "v25.0.0(3389)",
+            link: "https://gitee.com/xlgp/xiquzimu-apk/releases/download/v25.0.0/xiquzimu_v25.0.0(3389)_release.apk",
+            living: ["抖音", "抖音极速版", "抖音火山版", "微信视频号"],
+            tips: ["若使用中经常出现卡词异常，可重新安装低版本。"]
+        },
+        {
+            version: "v23.0.0(2897)",
+            link: "https://gitee.com/xlgp/xiquzimu-apk/releases/download/v23.0.0(2897)/xiquzimu_v23.0.0(2897)_release.apk",
+            living: ["抖音", "抖音极速版", "抖音火山版", "微信视频号"],
+        },
+        {
+            version: "v18.8.8(2000)_抖音版",
+            link: "https://gitee.com/xlgp/xiquzimu-apk/releases/download/v18.8.8/xiquzimu_v18.8.8(2000)_douyin_release.apk",
+            living: ["抖音", "抖音极速版", "抖音火山版", "微信视频号"],
+            tips: ["此版本为较低版本的修复版。"]
+        }
+    ];
+
+    addDownloadLinkElem(document.getElementById("download-link-list"), dlInfos);
+</script>
 
 <script>
 
