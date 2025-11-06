@@ -15,6 +15,12 @@
     </header>
     <p class="info">本软件适用于Android版和鸿蒙3.0版</p>
     <div id="download-link-list"></div>
+    <dialog id="qrcode-dialog">
+        <span class="qr-close" id="qr-close">X</span>
+        <p>戏曲字幕</p>
+        <div class="qr-item" id="qrcode"></div>
+        <p id="qr-tip" class="qr-tip"></p>
+    </dialog>
     <p>需要在浏览器打开本页面。不要在抖音打开页面，因为抖音不允许下载Apk。</p>
     <fieldset>
         <legend>本页面地址：<small>（点击链接复制）</small></legend>
@@ -32,9 +38,9 @@
     </fieldset>
 </body>
 
-<script>
+<script type="text/javascript">
 
-    function createLink(dlInfo) {
+    function createLink(dlInfo, index) {
         let living = "";
         for (const item of dlInfo.living) {
             living += `<span class="dl-living-item">${item}</span>`;
@@ -51,8 +57,7 @@
 
         let h = `
     <div class="dl-link-box">
-        <a class="dl-link-item"
-            href="${dlInfo.link}">
+        <a class="dl-link-item" href="${dlInfo.link}">
             <span>${dlInfo.version}</span>
             <span class="dl-button">下载</span>
         </a>
@@ -64,6 +69,7 @@
                 </span>
             </div>
             ${tips}
+            <button class="dl-button qr-button" data-index="${index}">查看二维码</botton>
         </div>
     </div>
     `
@@ -72,8 +78,9 @@
 
     function addDownloadLinkElem(parentElement, list) {
         let html = "";
-        for (const item of list) {
-            html += createLink(item);
+        for (let i = 0; i < list.length; i++) {
+            const item = list[i];
+            html += createLink(item, i);
         }
         parentElement.innerHTML = html;
     }
@@ -98,7 +105,19 @@
         }
     ];
 
-    addDownloadLinkElem(document.getElementById("download-link-list"), dlInfos);
+    const elem = document.getElementById("download-link-list");
+    elem.addEventListener("click", e => {
+        let elem = e.target;
+        let dlInfo = dlInfos[elem.dataset["index"]];
+        if (elem.className.includes("qr-button")) {
+            openDialog({
+                text: dlInfo.link,
+                tip: dlInfo.version
+            });
+        }
+    });
+    addDownloadLinkElem(elem, dlInfos);
+
 </script>
 
 <script>
@@ -116,12 +135,46 @@
     for (const elem of downloadLinkElems) {
         const linkElem = elem.parentElement.getElementsByClassName("download-link")[0];
         elem.dataset.clipboardText = linkElem.href;
-        console.log(elem, linkElem);
+    }
+
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="text/javascript">
+
+    const dialog = document.getElementById("qrcode-dialog");
+    if (typeof dialog.showModal !== "function") {
+        dialog.hidden = true;
+    }
+    document.getElementById("qr-close").addEventListener("click", () => {
+        dialog.close();
+    });
+
+    /**
+     * qrOption = {
+     *  text:string
+     * tip:string
+     * }
+     **/
+    const qrCodeElem = document.getElementById("qrcode");
+    const qrTipElem = document.getElementById("qr-tip");
+
+    function openDialog(qrOption) {
+        qrCodeElem.innerText = "";
+
+        let { text, tip } = qrOption;
+
+        new QRCode(qrCodeElem, {
+            text,
+            width: 200,
+            height: 200
+        });
+        qrTipElem.innerText = tip;
+        dialog.showModal();
     }
 
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
-<script>
+<script type="text/javascript">
     new ClipboardJS('code');
     new ClipboardJS(".download-link-extra");
 </script>

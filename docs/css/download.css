@@ -161,5 +161,41 @@ header>h3 {
 
 .dl-link-tip>ul {
     padding-left: 16px;
-    margin-bottom: auto;
+}
+
+.qr-item {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background-color: white;
+    border-radius: 2px;
+}
+
+dialog {
+    border: none;
+    color: #d7d7d7;
+    box-shadow: 0px 0px 4px 0px #ffffff;
+    background-color: #0e1012;
+    padding: .3em;
+    border-radius: 3px;
+    text-align: center;
+    position: relative;
+}
+
+.qr-close {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    right: 2px;
+    top: 2px;
+    font-size: small;
+    cursor: pointer;
+}
+
+.qr-button {
+    border: none;
+    width: fit-content;
 }
